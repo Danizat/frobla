@@ -1,7 +1,13 @@
 import React, { Component } from "react";
 import axios from 'axios';
-import "./App.css";
-import { Card } from "antd";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+
+
+import {Home,About,Blogs,Contacts} from "./pages";
 
 
 
@@ -26,14 +32,22 @@ componentWillMount() {
 }
   
   render() {
-    return<div className="App"> {this.state.posts.map((post) => {
-      return <Card
-          title = {post.title}
-          style={{ width: 700 }}
-        >
-      <p>{post.description}</p>
-        </Card>
-     })}
+    return<div className="App">
+      <Router><Switch>
+          <Route exact path="/">
+          <Home/>
+          </Route>
+          <Route path="/about">
+          <About/> 
+          </Route>
+          <Route path="/blogs">
+          <Blogs/> 
+          </Route>
+          <Route path="/contacts">
+          <Contacts/> 
+          </Route>
+        </Switch>
+      </Router>
       </div>
   }
 }
