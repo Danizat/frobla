@@ -1,27 +1,77 @@
-body {
-    font-family: BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+:root {
+  --temp-color: aquamarine;
+  --page-margin: 30px;
 }
-.App {
-    text-align: center;
-  }
-.Header .logo {
-    width: 30px;
-    height: 30px;
-    background-color: aquamarine;
-    display: inline-block;
-    margin: 0 ;
-    
-  }
 
-  .Search {
- 
-   margin: 0 auto;
-   display: inline-block;
-  }
+body {
+  font-family: BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.App {
+  text-align: center;
+}
+
+.Header {
+  border: 1px solid var(--temp-color);
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  background: #fff;
+}
+
+.Header .logo {
+  width: 30px;
+  height: 30px;
+  background-color: var(--temp-color);
+  display: inline-block;
+  margin: 0;
+}
+
+.Search {
+  margin: 0 auto;
+  display: inline-block;
+}
+
+.User {
+  padding-left: 60%;
+}
+
+.UserPopoverContent {
+}
+
+.UserPopoverContent a {
+  display: block;
+}
+
+.User .UserAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid var(--temp-color);
+}
+
+.User .UserAvatar img {
+  width: 100%;
+  height: 100%;
+}
+
+.Blogs .blogCard {
+  width: 100%;
+  text-align: start;
+}
+
+.Sidebar {
+  height: 1000px;
+  background: #ddd;
   
-  .User {
-    width:40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: aquamarine;
-  }
+  
+}
+
+.Container {
+  margin: var(--page-margin);
+}
+
+

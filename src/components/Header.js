@@ -39,13 +39,13 @@ class Header extends Component {
   render() {
     return (
       <div className="Header">
-        <Row>
+        <Row justify="space-around" align="middle">
           <Col xl={4} lg={4} md={4} sm={6} xs={6}>
             <NavLink to="/" activeClassName="selected">
-              <div className="logo"></div>
+              <div className="logo"> </div>
             </NavLink>
           </Col>
-          <Col xl={6} lg={6} md={6} sm={6} xs={6}>
+          <Col xl={6} lg={6} md={7} sm={6} xs={6}>
             <Search />
           </Col>
           <Col xl={10} lg={10} md={10} sm={0} xs={0}>
@@ -70,7 +70,7 @@ class Header extends Component {
               </Menu.Item>
             </Menu>
           </Col>
-          <Col xl={4} lg={4} md={4} sm={6} xs={6}>
+          <Col xl={4} lg={4} md={3} sm={6} xs={6} align="left">
             <User />
           </Col>
           <Col xl={0} lg={0} md={0} sm={6} xs={6}>
