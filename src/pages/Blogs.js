@@ -1,39 +1,27 @@
 import React, { Component } from "react";
 import { Row, Col } from "antd";
 import { Card } from "antd";
-import axios from "axios";
 import ReactMarkdown from "react-markdown";
+import { inject, observer } from "mobx-react";
 
 import { Header, Sidebar } from "../components";
 import { Link } from "react-router-dom";
 
 class Blogs extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      articles: [],
-    };
-  }
-
   componentWillMount() {
-    axios
-      .get(`http://localhost:8000/api/articles/`)
-      .then((res) => {
-        this.setState({ articles: res.data });
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    this.props.ArticlesStore.loadArticles();
   }
 
   render() {
+    let { articles } = this.props.ArticlesStore;
+
     return (
       <div className="Blogs">
         <Header />
         <div className="Container">
           <Row justify="space-around">
             <Col xl={17} lg={17} md={17} sm={24} xs={24}>
-              {this.state.articles.map((a) => {
+              {articles.map((a) => {
                 return (
                   <div className="blogCard" key={a.id}>
                     <Card title={a.article_title}>
@@ -57,4 +45,4 @@ class Blogs extends Component {
   }
 }
 
-export default Blogs;
+export default inject("ArticlesStore")(observer(Blogs));
